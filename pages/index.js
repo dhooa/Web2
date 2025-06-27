@@ -469,11 +469,3 @@ function ContactItem({ icon, text }) {
     </div>
   )
 }
-
-function SocialLink({ href, icon }) {
-  return (
-    <motion.a
-      href={href}
-      whileHover={{ scale: 1.2, rotate: 5 }}
-      whileTap={{ scale: 0.9 }}
-      className="text-2xl hover:text-forest-30
