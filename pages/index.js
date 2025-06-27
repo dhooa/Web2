@@ -349,10 +349,12 @@ export default function Home() {
                 <h3 className="text-3xl font-serif font-bold mb-4">Shelter Green Coffee</h3>
                 <p className="text-forest-300 mb-6">Where sustainable luxury meets natural beauty</p>
                 <div className="flex justify-center space-x-6 mb-8">
-                  <SocialLink href="#" icon="📘" />
-                  <SocialLink href="#" icon="📸" />
-                  <SocialLink href="#" icon="🐦" />
-                  <SocialLink href="#" icon="🎥" />
+                  import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
+<SocialLink href="#" icon={<FaFacebookF />} />
+<SocialLink href="#" icon={<FaInstagram />} />
+<SocialLink href="#" icon={<FaTwitter />} />
+<SocialLink href="#" icon={<FaYoutube />} />
                 </div>
                 <p className="text-forest-400">© 2024 Shelter Green Coffee. All rights reserved.</p>
               </motion.div>
