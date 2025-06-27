@@ -5,8 +5,9 @@ const nextConfig = {
     unoptimized: false,
   },
   experimental: {
-    optimizeCss: false, // atau true kalau sudah install critters
+    optimizeCss: false, // matikan, jadi gak perlu critters
   },
+  // analytics: { id: ... }  // HAPUS ini
 }
 
 module.exports = nextConfig;
