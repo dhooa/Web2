@@ -2,14 +2,11 @@
 const nextConfig = {
   images: {
     domains: [],
-    unoptimized: false
+    unoptimized: false,
   },
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false, // atau true kalau sudah install critters
   },
-  analytics: {
-    id: process.env.VERCEL_ANALYTICS_ID,
-  }
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
