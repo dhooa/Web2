@@ -337,4 +337,143 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-forest-900 text-white p
+        <footer className="bg-forest-900 text-white py-12">
+          <div className="container mx-auto px-6">
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-3xl font-serif font-bold mb-4">Shelter Green Coffee</h3>
+                <p className="text-forest-300 mb-6">Where sustainable luxury meets natural beauty</p>
+                <div className="flex justify-center space-x-6 mb-8">
+                  <SocialLink href="#" icon="📘" />
+                  <SocialLink href="#" icon="📸" />
+                  <SocialLink href="#" icon="🐦" />
+                  <SocialLink href="#" icon="🎥" />
+                </div>
+                <p className="text-forest-400">© 2024 Shelter Green Coffee. All rights reserved.</p>
+              </motion.div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+  )
+}
+
+// Component definitions
+function NavLink({ href, children }) {
+  return (
+    <motion.a
+      href={href}
+      whileHover={{ scale: 1.05 }}
+      className="text-white hover:text-forest-300 transition-colors font-medium"
+    >
+      {children}
+    </motion.a>
+  )
+}
+
+function RoomCard({ title, description, price, features, delay }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+      className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+    >
+      <div className="h-48 bg-gradient-to-br from-forest-400 to-forest-600 relative overflow-hidden">
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute inset-0 bg-gradient-to-br from-forest-300/50 to-coffee-300/50"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.div
+            animate={{ rotate: [0, 5, -5, 0] }}
+            transition={{ duration: 6, repeat: Infinity }}
+            className="text-6xl text-white/80"
+          >
+            🏡
+          </motion.div>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-2xl font-bold text-forest-800 mb-2">{title}</h3>
+        <p className="text-forest-600 mb-4">{description}</p>
+        <div className="flex justify-between items-center mb-4">
+          <span className="text-2xl font-bold text-coffee-600">{price}</span>
+        </div>
+        <ul className="space-y-2 mb-6">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center text-forest-600">
+              <span className="text-forest-500 mr-2">✓</span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-full bg-forest-500 text-white py-3 rounded-lg font-semibold hover:bg-forest-600 transition-colors"
+        >
+          Book Now
+        </motion.button>
+      </div>
+    </motion.div>
+  )
+}
+
+function ExperienceItem({ icon, title, description }) {
+  return (
+    <motion.div
+      whileHover={{ x: 10 }}
+      className="flex items-center space-x-4 text-white"
+    >
+      <span className="text-2xl">{icon}</span>
+      <div>
+        <h4 className="font-semibold">{title}</h4>
+        <p className="text-coffee-100">{description}</p>
+      </div>
+    </motion.div>
+  )
+}
+
+function ValueCard({ icon, title, description }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.05 }}
+      className="text-center"
+    >
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="text-xl font-bold text-forest-800 mb-2">{title}</h3>
+      <p className="text-forest-600">{description}</p>
+    </motion.div>
+  )
+}
+
+function ContactItem({ icon, text }) {
+  return (
+    <div className="flex items-center space-x-3 text-white">
+      <span className="text-xl">{icon}</span>
+      <span>{text}</span>
+    </div>
+  )
+}
+
+function SocialLink({ href, icon }) {
+  return (
+    <motion.a
+      href={href}
+      whileHover={{ scale: 1.2, rotate: 5 }}
+      whileTap={{ scale: 0.9 }}
+      className="text-2xl hover:text-forest-30
